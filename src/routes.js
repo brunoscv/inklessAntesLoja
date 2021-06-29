@@ -13,6 +13,7 @@ import Attendance from './pages/Attendance';
 import Clinic from './pages/Clinic';
 import Acceptcall from './pages/Acceptcall';
 import Reloadcall from './pages/Reloadcall';
+import SchedulesAndExams from './pages/SchedulesAndExams';
 
 const Routes = createAppContainer(
     createSwitchNavigator({
@@ -29,6 +30,7 @@ const Routes = createAppContainer(
         Clinic,
         Acceptcall,
         Reloadcall,
+        SchedulesAndExams
         
     })
 );
