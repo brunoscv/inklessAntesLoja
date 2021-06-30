@@ -15,11 +15,13 @@ export default function SchedulesAndExams({ navigation }) {
 
             <View style={styles.content}>
                 <View style={styles.firstrow}>
-                    <TouchableOpacity onPress={() => navigation.navigate('')} style={styles.button}>
-                        <Text style={styles.buttonText}>Agendar Consulta</Text>
+                    <TouchableOpacity onPress={() => navigation.navigate('QueryScheduling')} style={styles.button}>
+                        <Image style={styles.iconSchedule} source={require('../../assets/icon_schedule.png')} />
+                        <Text style={styles.buttonText}>Agendar{'\n'}Consulta</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => navigation.navigate('')} style={styles.button}>
-                        <Text style={styles.buttonText}>Agendar Exame</Text>
+                    <TouchableOpacity onPress={() => navigation.navigate('ExamsScheduling')} style={styles.button}>
+                    <Image style={styles.iconExam} source={require('../../assets/icon_exam.png')} />
+                        <Text style={styles.buttonText}>Agendar{'\n'}  Exame</Text>
                     </TouchableOpacity>
                 </View>
 
@@ -36,10 +38,11 @@ const styles = StyleSheet.create({
     },
     content: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: 'flex-start',
+        alignItems: 'center'
     },
     firstrow: {
+        marginTop: 50,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
@@ -60,24 +63,14 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 16
     },
-    cardAvatar: {
-        height: 50,
-        width: 50,
-        backgroundColor: 'gray',
-        borderRadius: 50,
+    iconSchedule: {
+        width: 75,
+        height: 85,
+        resizeMode: 'stretch'
     },
-    menuText: {
-        color: '#fff',
-        fontWeight: 'bold',
-        fontSize: 18,
-        paddingVertical: 10,
-        paddingHorizontal: 10
-    },
-    nameText: {
-        color: '#fff',
-        fontWeight: 'bold',
-        fontSize: 15,
-        paddingVertical: 2,
-        paddingHorizontal: 20
-    },
+    iconExam: {
+        width: 81,
+        height: 97,
+        resizeMode: 'stretch'
+    }
 });

@@ -26,7 +26,7 @@
     "opentok-react-native": "^0.14.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-native": "0.63.3",
+    "react-native": "^0.63.3",
     "react-native-blink-view": "^0.0.6",
     "react-native-fs": "^2.17.0",
     "react-native-geolocation-service": "^5.0.0",
@@ -35,7 +35,7 @@
     "react-native-opentok": "^2.1.0",
     "react-native-reanimated": "^1.13.1",
     "react-native-svg": "^12.1.0",
-    "react-native-web": "~0.13.12",
+    "react-native-web": "^0.13.12",
     "react-navigation": "^4.4.3",
     "rn-fetch-blob": "^0.12.0"
   },
