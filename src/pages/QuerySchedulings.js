@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Text} from 'react-native';
+import { Picker } from '@react-native-picker/picker';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
@@ -12,6 +13,66 @@ export default function QueryScheduling({ navigation }){
                 </TouchableOpacity>
                 <Text style={{ color: '#fff', fontSize: 20, fontWeight: '400' }}>Consulta</Text>
             </View>
+            <View style={styles.content}>
+                <View style={styles.firstrow}>
+                    <Text style={styles.labelText}>Nome:</Text>
+                    <Text style={styles.labelText}>Nome do paciente</Text>
+                </View>
+                <View style={styles.secondrow}>
+                    <Text style={styles.labelText}>Telefone:</Text>
+                    <Text style={styles.labelText}>Telefone do paciente</Text>
+                </View>
+                <View style={styles.thirdrow}>
+                    <Text style={styles.labelText}>Cpf:</Text>
+                    <Text style={styles.labelText}>Cpf do paciente</Text>
+                </View>
+                <View style={styles.fourthrow}>
+                    <Text style={styles.labelText}>Data de Nasc.:</Text>
+                    <Text style={styles.labelText}>Nasc. do paciente</Text>
+                </View>
+                <View>
+                    <Text style={styles.labelText}>Tipo de atendimento:</Text>
+                    <Picker>
+                        <Picker.Item label='Convencional' value='convencional'/>
+                        <Picker.Item label='Dificuldade de locomoção' value='dificuldade_de_locomocao'/>
+                        <Picker.Item label='Idoso maior que 60 anos' value='idoso_maior_60_anos'/>
+                        <Picker.Item label='Gestantes' value='gestantes'/>
+                        <Picker.Item label='Criança de colos' value='crianca_colo'/>
+                        <Picker.Item label='Autistas' value='autistas'/>
+                    </Picker>
+                </View>
+                <View>
+                    <Text style={styles.labelText}>Selecione o convênio:</Text>
+                    <Picker>
+
+                    </Picker>
+                </View>
+                <View>
+                    <Text style={styles.labelText}>Selecione a especialidade:</Text>
+                    <Picker>
+
+                    </Picker>
+                </View>
+                <View>
+                    <Text style={styles.labelText}>Selecione o médico:</Text>
+                    <Picker>
+
+                    </Picker>
+                </View>
+                <View>
+                    <Text style={styles.labelText}>Selecione o horário:</Text>
+                    <Picker>
+
+                    </Picker>
+                </View>
+                {/*Radio buttons row presencial or teleconsulta*/}
+                <View></View>
+                <View>
+                    <TouchableOpacity style={styles.queryButton}>
+                        <Text style={styles.queryText}>Agendar Consulta</Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
         </View>
     );
 }
@@ -21,18 +82,42 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#1976d2',
     },
+    header: {
+        backgroundColor: '#1976d2',
+        padding: 10,
+        borderBottomLeftRadius: 15,
+        borderBottomRightRadius: 15,
+        flexDirection: 'row'
+    },
+    nameScreen: {
+        color: '#fff',
+        fontSize: 20,
+        fontWeight: '400'
+    },
     content: {
         flex: 1,
-        justifyContent: 'flex-start',
-        alignItems: 'center'
+        justifyContent: 'space-evenly',
+        marginHorizontal: 15
+    },
+    labelText: {
+        color: '#fff',
+        fontSize: 21
     },
     firstrow: {
-        marginTop: 50,
         flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#1976d2',
-
+        justifyContent: 'space-between',
+    },
+    secondrow: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    thirdrow: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    fourthrow: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
     },
     button: {
         height: 160,
@@ -43,9 +128,18 @@ const styles = StyleSheet.create({
         borderRadius: 16,
         margin: 5
     },
-    buttonText: {
-        color: '#fff',
-        fontWeight: 'bold',
-        fontSize: 16
+    queryButton: {
+        backgroundColor: '#fff',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 4,
+        margin: 2,
+        padding: 15,
+        flexDirection: 'row'
+    },
+    queryText: {
+        color: '#1976d2',
+        fontSize: 21,
+        fontWeight: 'bold'
     },
 });
