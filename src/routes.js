@@ -16,6 +16,7 @@ import Reloadcall from './pages/Reloadcall';
 import SchedulesAndExams from './pages/SchedulesAndExams';
 import QueryScheduling from './pages/QuerySchedulings';
 import ExamsScheduling from './pages/ExamsScheduling';
+import ServiceEvaluation from './pages/ServiceEvaluation';
 
 const Routes = createAppContainer(
     createSwitchNavigator({
@@ -34,7 +35,8 @@ const Routes = createAppContainer(
         Reloadcall,
         SchedulesAndExams,
         QueryScheduling,
-        ExamsScheduling
+        ExamsScheduling,
+        ServiceEvaluation
         
     })
 );

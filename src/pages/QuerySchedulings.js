@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, Text} from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-export default function QueryScheduling({ navigation }){
-    return(
+export default function QueryScheduling({ navigation }) {
+    return (
         <View style={styles.container}>
             <View style={{ backgroundColor: '#1976d2', padding: 10, borderBottomLeftRadius: 15, borderBottomRightRadius: 15, flexDirection: 'row' }}>
                 <TouchableOpacity onPress={() => navigation.navigate('SchedulesAndExams')} style={{ padding: 5 }}>
@@ -32,38 +32,48 @@ export default function QueryScheduling({ navigation }){
                 </View>
                 <View>
                     <Text style={styles.labelText}>Tipo de atendimento:</Text>
-                    <Picker>
-                        <Picker.Item label='Convencional' value='convencional'/>
-                        <Picker.Item label='Dificuldade de locomoção' value='dificuldade_de_locomocao'/>
-                        <Picker.Item label='Idoso maior que 60 anos' value='idoso_maior_60_anos'/>
-                        <Picker.Item label='Gestantes' value='gestantes'/>
-                        <Picker.Item label='Criança de colos' value='crianca_colo'/>
-                        <Picker.Item label='Autistas' value='autistas'/>
-                    </Picker>
+                    <View style={styles.fieldPicker}>
+                        <Picker style={styles.picker}>
+                            <Picker.Item label='Convencional' value='convencional' />
+                            <Picker.Item label='Dificuldade de locomoção' value='dificuldade_de_locomocao' />
+                            <Picker.Item label='Idoso maior que 60 anos' value='idoso_maior_60_anos' />
+                            <Picker.Item label='Gestantes' value='gestantes' />
+                            <Picker.Item label='Criança de colos' value='crianca_colo' />
+                            <Picker.Item label='Autistas' value='autistas' />
+                        </Picker>
+                    </View>
                 </View>
                 <View>
                     <Text style={styles.labelText}>Selecione o convênio:</Text>
-                    <Picker>
-
-                    </Picker>
+                    <View style={styles.fieldPicker}>
+                        <Picker style={styles.picker}>
+                            <Picker.Item label='Plano econômico' value='plano_economico' />
+                        </Picker>
+                    </View>
                 </View>
                 <View>
                     <Text style={styles.labelText}>Selecione a especialidade:</Text>
-                    <Picker>
-
-                    </Picker>
+                    <View style={styles.fieldPicker}>
+                        <Picker style={styles.picker}>
+                            
+                        </Picker>
+                    </View>
                 </View>
                 <View>
                     <Text style={styles.labelText}>Selecione o médico:</Text>
-                    <Picker>
-
-                    </Picker>
+                    <View style={styles.fieldPicker}>
+                        <Picker style={styles.picker}>
+                            
+                        </Picker>
+                    </View>
                 </View>
                 <View>
                     <Text style={styles.labelText}>Selecione o horário:</Text>
-                    <Picker>
-
-                    </Picker>
+                    <View style={styles.fieldPicker}>
+                        <Picker style={styles.picker}>
+                            
+                        </Picker>
+                    </View>
                 </View>
                 {/*Radio buttons row presencial or teleconsulta*/}
                 <View></View>
@@ -118,6 +128,15 @@ const styles = StyleSheet.create({
     fourthrow: {
         flexDirection: 'row',
         justifyContent: 'space-between',
+    },
+    picker: {
+        color: '#ffffff',
+    },
+    fieldPicker: {
+        marginTop: 5,
+        borderWidth: 1,
+        borderColor: '#ffffff',
+        borderRadius: 3
     },
     button: {
         height: 160,
