@@ -55,7 +55,7 @@ export default function QueryScheduling({ navigation }) {
                     <Text style={styles.labelText}>Selecione a especialidade:</Text>
                     <View style={styles.fieldPicker}>
                         <Picker style={styles.picker}>
-                            
+
                         </Picker>
                     </View>
                 </View>
@@ -63,7 +63,7 @@ export default function QueryScheduling({ navigation }) {
                     <Text style={styles.labelText}>Selecione o médico:</Text>
                     <View style={styles.fieldPicker}>
                         <Picker style={styles.picker}>
-                            
+
                         </Picker>
                     </View>
                 </View>
@@ -71,12 +71,23 @@ export default function QueryScheduling({ navigation }) {
                     <Text style={styles.labelText}>Selecione o horário:</Text>
                     <View style={styles.fieldPicker}>
                         <Picker style={styles.picker}>
-                            
+
                         </Picker>
                     </View>
                 </View>
                 {/*Radio buttons row presencial or teleconsulta*/}
-                <View></View>
+                <View style={styles.radioBtnsRow}>
+                    <View style={styles.radioBtns}>
+                        <TouchableOpacity style={styles.circle}>
+                        </TouchableOpacity>
+                        <Text style={styles.labelRadioBtns}> Presencial</Text>
+                    </View>
+                    <View style={styles.radioBtns}>
+                        <TouchableOpacity style={styles.circle}>
+                        </TouchableOpacity>
+                        <Text style={styles.labelRadioBtns}> Teleconsulta</Text>
+                    </View>
+                </View>
                 <View>
                     <TouchableOpacity style={styles.queryButton}>
                         <Text style={styles.queryText}>Agendar Consulta</Text>
@@ -137,6 +148,27 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#ffffff',
         borderRadius: 3
+    },
+    radioBtnsRow:{
+        flexDirection: 'row',
+        justifyContent: 'space-evenly'
+        //alignItems: 'center'
+    },
+    radioBtns:{
+        flexDirection: 'row'
+    },
+    labelRadioBtns:{
+        color: '#ffffff',
+        fontSize: 18
+    },
+    circle: {
+        height: 20,
+        width: 20,
+        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: '#ffffff',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     button: {
         height: 160,
