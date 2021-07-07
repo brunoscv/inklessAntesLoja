@@ -6106,6 +6106,11 @@
   "resolved" "https://registry.npmjs.org/react-native-opentok/-/react-native-opentok-2.1.0.tgz"
   "version" "2.1.0"
 
+"react-native-popup-menu@^0.15.11":
+  "integrity" "sha512-f5q2GoDN99bkA24wHiwasaErcdQEgyqYZ8IYuZPOrZNFr66E4rg6f4LElSVBA3EZJTSq5OddVeaOcU340bSTEg=="
+  "resolved" "https://registry.npmjs.org/react-native-popup-menu/-/react-native-popup-menu-0.15.11.tgz"
+  "version" "0.15.11"
+
 "react-native-reanimated@^1.13.1":
   "integrity" "sha512-i714H24dv6ncpFO7/SZ0PfAMbvjgVbF8Ow2NPtowoZAz8osS54DmTMrkgJ9Za+uEku/s0AEaxqiXG2Xgntvv2g=="
   "resolved" "https://registry.npmjs.org/react-native-reanimated/-/react-native-reanimated-1.13.3.tgz"

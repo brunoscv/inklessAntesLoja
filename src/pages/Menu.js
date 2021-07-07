@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, Text, TouchableOpacity, Image, Alert } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faClock, faBookReader, faFile, faFolder, faSignOutAlt, faVideo, faQrcode } from '@fortawesome/free-solid-svg-icons';
+import { faClock, faBookReader, faFile, faFolder, faSignOutAlt, faVideo, faQrcode, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import messaging from '@react-native-firebase/messaging';
+import { MenuProvider, Menu as MenuHospitais, MenuOptions, MenuOption, MenuTrigger, renderers } from 'react-native-popup-menu';
 
 import api from '../services/api';
 import baseURL from './Baseurl';
@@ -14,6 +15,7 @@ export default function Menu({ navigation }) {
   const [scheduling, setScheduling] = useState(0);
   const [userId, setUserId] = useState('');
   const [user, setUser] = useState('');
+  const Hospitais = ['Hospital Gastrovita', 'Hospital Santa Maria', 'Hospital São Pedro', 'Hospital São Marcos']
   useEffect(() => {
     async function loadCustomer() {
       const user_id = await AsyncStorage.getItem('@storage_Key');
@@ -135,62 +137,83 @@ export default function Menu({ navigation }) {
   /** FIREBASE NOTIFICATION NAVIGATOR */
 
   return (
-    <View style={styles.container}>
-      <View>
-        <View style={{ backgroundColor: '#1976d2', padding: 10, borderBottomLeftRadius: 15, borderBottomRightRadius: 15, flexDirection: 'row', justifyContent: 'space-between' }}>
-          <Text style={styles.menuText}>Bem vindo(a):</Text>
-          {!user.image ?
-            <Image style={styles.cardAvatar} source={require('../../assets/user.png')} />
-            :
-            <Image style={styles.cardAvatar} source={{ uri: baseURL + 'storage/' + user.image }} />
-          }
+    <MenuProvider>
+      <View style={styles.container}>
+        <View>
+          <View>
+            <MenuHospitais renderer={renderers.SlideInMenu} >
+              <MenuTrigger>
+                <View style={styles.menuHospitais}>
+                  <Text style={styles.menuText}>Hospital Gastrovita</Text>
+                  <FontAwesomeIcon icon={faAngleDown} size={20} color="#fff" />
+                </View>
+              </MenuTrigger>
+              <MenuOptions>
+                {Hospitais.map(hospital => (
+                  <MenuOption key={hospital}>
+                    <Image />
+                    <Text>
+                      {hospital}
+                    </Text>
+                  </MenuOption>))}
+              </MenuOptions>
+            </MenuHospitais>
+          </View>
+          <View style={{ padding: 20, flexDirection: 'row', alignItems: 'center' }}>
+            {!user.image ?
+              <Image style={styles.cardAvatar} source={require('../../assets/user.png')} />
+              :
+              <Image style={styles.cardAvatar} source={{ uri: baseURL + 'storage/' + user.image }} />
+            }
+            <Text style={styles.nameText}>Bem vindo(a), {user.name}</Text>
+            {/*<Text style={styles.nameText}></Text>*/}
+          </View>
         </View>
-        <Text style={styles.nameText}>{user.name}</Text>
 
-      </View>
-      <View style={styles.content}>
-        <View style={styles.firstrow}>
-          <TouchableOpacity onPress={() => navigation.navigate('SchedulesAndExams')} style={styles.button}>
-            <FontAwesomeIcon icon={faQrcode} size={80} color="#fff" />
-            <Text style={styles.buttonText}>Recepção</Text>
-          </TouchableOpacity>
+        <View style={styles.content}>
+          <View style={styles.firstrow}>
+            <TouchableOpacity onPress={() => navigation.navigate('SchedulesAndExams')} style={styles.button}>
+              <FontAwesomeIcon icon={faQrcode} size={80} color="#fff" />
+              <Text style={styles.buttonText}>Recepção</Text>
+            </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => navigation.navigate('Scheduling')} style={styles.button}>
-            <FontAwesomeIcon icon={faClock} size={80} color="#fff" />
-            <Text style={styles.buttonText}>Check-In</Text>
-          </TouchableOpacity>
-        </View>
+            <TouchableOpacity onPress={() => navigation.navigate('Scheduling')} style={styles.button}>
+              <FontAwesomeIcon icon={faClock} size={80} color="#fff" />
+              <Text style={styles.buttonText}>Check-In</Text>
+            </TouchableOpacity>
+          </View>
 
-        <View style={styles.secondrow}>
-          <TouchableOpacity onPress={() => navigation.navigate('Report')} style={styles.button}>
-            <FontAwesomeIcon icon={faFile} size={80} color="#fff" />
-            <Text style={styles.buttonText}>Laudos</Text>
-          </TouchableOpacity>
+          <View style={styles.secondrow}>
+            <TouchableOpacity onPress={() => navigation.navigate('Report')} style={styles.button}>
+              <FontAwesomeIcon icon={faFile} size={80} color="#fff" />
+              <Text style={styles.buttonText}>Laudos</Text>
+            </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => navigation.navigate('Document')} style={styles.button}>
-            <FontAwesomeIcon icon={faFolder} size={80} color="#fff" />
-            <Text style={styles.buttonText}>Documentos</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.thirdrow}>
-          <TouchableOpacity onPress={() => navigation.navigate('Historic')} style={styles.button}>
-            <FontAwesomeIcon icon={faBookReader} size={80} color="#fff" />
-            <Text style={styles.buttonText}>Agendamentos</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-
-      <View>
-        <View style={{ flexDirection: 'row', justifyContent: 'flex-end', paddingHorizontal: 20 }}>
-          <Text style={styles.exitText}>Sair</Text>
-          <View style={{ paddingVertical: 12, paddingHorizontal: 5 }}>
-            <TouchableOpacity onPress={() => removeValue()}>
-              <FontAwesomeIcon icon={faSignOutAlt} size={20} color="#fff" />
+            <TouchableOpacity onPress={() => navigation.navigate('Document')} style={styles.button}>
+              <FontAwesomeIcon icon={faFolder} size={80} color="#fff" />
+              <Text style={styles.buttonText}>Documentos</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.thirdrow}>
+            <TouchableOpacity onPress={() => navigation.navigate('Historic')} style={styles.button}>
+              <FontAwesomeIcon icon={faBookReader} size={80} color="#fff" />
+              <Text style={styles.buttonText}>Agendamentos</Text>
             </TouchableOpacity>
           </View>
         </View>
+
+        <View>
+          <View style={{ flexDirection: 'row', justifyContent: 'flex-end', paddingHorizontal: 20 }}>
+            <Text style={styles.exitText}>Sair</Text>
+            <View style={{ paddingVertical: 12, paddingHorizontal: 5 }}>
+              <TouchableOpacity onPress={() => removeValue()}>
+                <FontAwesomeIcon icon={faSignOutAlt} size={20} color="#fff" />
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
       </View>
-    </View>
+    </MenuProvider>
   );
 }
 
@@ -247,13 +270,21 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: 'bold',
     fontSize: 18,
-    paddingVertical: 10,
-    paddingHorizontal: 10
+  },
+  menuHospitais: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginLeft: 20,
+    marginTop: 20
+  },
+  menuOptions: {
+    borderTopRightRadius: 10,
+    borderTopLeftRadius: 10
   },
   nameText: {
     color: '#fff',
-    fontWeight: 'bold',
-    fontSize: 15,
+    //fontWeight: 'bold',
+    fontSize: 17,
     paddingVertical: 2,
     paddingHorizontal: 20
   },
