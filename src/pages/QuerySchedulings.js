@@ -11,7 +11,7 @@ export default function QueryScheduling({ navigation }) {
                 <TouchableOpacity onPress={() => navigation.navigate('SchedulesAndExams')} style={{ padding: 5 }}>
                     <FontAwesomeIcon icon={faArrowLeft} size={20} color="#fff" />
                 </TouchableOpacity>
-                <Text style={{ color: '#fff', fontSize: 20, fontWeight: '400' }}>Consulta</Text>
+                <Text style={{ color: '#fff', fontSize: 20, fontWeight: '400' }}>Agendamento de consulta</Text>
             </View>
             <View style={styles.content}>
                 <View style={styles.firstrow}>

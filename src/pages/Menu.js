@@ -148,14 +148,18 @@ export default function Menu({ navigation }) {
                   <FontAwesomeIcon icon={faAngleDown} size={20} color="#fff" />
                 </View>
               </MenuTrigger>
-              <MenuOptions>
+              <MenuOptions style={styles.menuOptionsHead} >
+                <View>{/*headmenuborder*/}</View>
                 {Hospitais.map(hospital => (
                   <MenuOption key={hospital}>
-                    <Image />
-                    <Text>
-                      {hospital}
-                    </Text>
-                  </MenuOption>))}
+                    <View style={styles.cardMenuOption}>
+                      <Image style={styles.logoHospitalMenuOptions} source={require('../../assets/user.png')} />
+                      <Text style={styles.nameMenuOptions}>
+                        {hospital}
+                      </Text>
+                    </View>
+                  </MenuOption>)
+                )}
               </MenuOptions>
             </MenuHospitais>
           </View>
@@ -266,6 +270,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'gray',
     borderRadius: 50,
   },
+  menuOptionsHead:{
+    padding: 10
+  },
   menuText: {
     color: '#fff',
     fontWeight: 'bold',
@@ -277,9 +284,20 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     marginTop: 20
   },
-  menuOptions: {
-    borderTopRightRadius: 10,
-    borderTopLeftRadius: 10
+  cardMenuOption:{
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 3
+  },
+  nameMenuOptions: {
+    fontSize: 20,
+    marginLeft: 10
+    //fontVariant: ['small-caps']
+  },
+  logoHospitalMenuOptions: {
+    width: 55,
+    height: 55,
+    marginLeft: 5
   },
   nameText: {
     color: '#fff',

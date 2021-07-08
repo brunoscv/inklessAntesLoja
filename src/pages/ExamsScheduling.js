@@ -11,7 +11,7 @@ export default function ExamsScheduling({ navigation }) {
                 <TouchableOpacity onPress={() => navigation.navigate('SchedulesAndExams')} style={{ padding: 5 }}>
                     <FontAwesomeIcon icon={faArrowLeft} size={20} color="#fff" />
                 </TouchableOpacity>
-                <Text style={styles.nameScreen}>Exames</Text>
+                <Text style={styles.nameScreen}>Agendamento de exames</Text>
             </View>
             <View style={styles.content}>
                 <View style={styles.firstrow}>
