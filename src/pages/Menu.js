@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, Text, TouchableOpacity, Image, Alert } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faClock, faBookReader, faFile, faFolder, faSignOutAlt, faVideo, faQrcode, faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { faClock, faBookReader, faFile, faFolder, faSignOutAlt, faVideo, faQrcode, faAngleDown, faGripLines } from '@fortawesome/free-solid-svg-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import messaging from '@react-native-firebase/messaging';
 import { MenuProvider, Menu as MenuHospitais, MenuOptions, MenuOption, MenuTrigger, renderers } from 'react-native-popup-menu';
@@ -15,7 +15,11 @@ export default function Menu({ navigation }) {
   const [scheduling, setScheduling] = useState(0);
   const [userId, setUserId] = useState('');
   const [user, setUser] = useState('');
-  const Hospitais = ['Hospital Gastrovita', 'Hospital Santa Maria', 'Hospital São Pedro', 'Hospital São Marcos']
+  const Hospitais = [
+    {name:'Hospital Gastrovita', logo: require('../../assets/gt.png')},
+    {name:'Hospital Santa Maria', logo: require('../../assets/sm.png')},
+    {name:'Hospital São Pedro', logo: require('../../assets/sp.png')}
+  ]
   useEffect(() => {
     async function loadCustomer() {
       const user_id = await AsyncStorage.getItem('@storage_Key');
@@ -148,14 +152,16 @@ export default function Menu({ navigation }) {
                   <FontAwesomeIcon icon={faAngleDown} size={20} color="#fff" />
                 </View>
               </MenuTrigger>
-              <MenuOptions style={styles.menuOptionsHead} >
-                <View>{/*headmenuborder*/}</View>
+              <MenuOptions style={styles.menuTransparent}>
+                <View style={styles.menuOptionsHead}>
+                  <FontAwesomeIcon icon={faGripLines} size={30} color="#808080"/>
+                </View>
                 {Hospitais.map(hospital => (
-                  <MenuOption key={hospital}>
+                  <MenuOption key={hospital.name} style={styles.containerMenuOptions}>
                     <View style={styles.cardMenuOption}>
-                      <Image style={styles.logoHospitalMenuOptions} source={require('../../assets/user.png')} />
+                      <Image style={styles.logoHospitalMenuOptions} source={hospital.logo} />
                       <Text style={styles.nameMenuOptions}>
-                        {hospital}
+                        {hospital.name}
                       </Text>
                     </View>
                   </MenuOption>)
@@ -270,8 +276,15 @@ const styles = StyleSheet.create({
     backgroundColor: 'gray',
     borderRadius: 50,
   },
+  menuTransparent:{
+    backgroundColor: '#1976d2',
+  },
   menuOptionsHead:{
-    padding: 10
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#ffffff',
+    borderTopEndRadius: 25,
+    borderTopStartRadius: 25
   },
   menuText: {
     color: '#fff',
@@ -284,20 +297,25 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     marginTop: 20
   },
+  containerMenuOptions:{
+    backgroundColor: '#ffffff'
+  },
   cardMenuOption:{
     flexDirection: 'row',
     alignItems: 'center',
+    backgroundColor: '#ffffff',
     padding: 3
   },
   nameMenuOptions: {
     fontSize: 20,
-    marginLeft: 10
+    marginLeft: 20
     //fontVariant: ['small-caps']
   },
   logoHospitalMenuOptions: {
-    width: 55,
-    height: 55,
-    marginLeft: 5
+    width: 60,
+    height: 60,
+    marginLeft: 5,
+    resizeMode: 'contain'
   },
   nameText: {
     color: '#fff',
