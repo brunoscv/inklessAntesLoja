@@ -3,29 +3,29 @@ import { View, StyleSheet, TouchableOpacity, Text, Image } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-export default function SchedulesAndExams({ navigation }) {
+export default function TimesSuggestionConsultation({ navigation }) {
     return (
         <View style={styles.container}>
             <View style={{ backgroundColor: '#1976d2', padding: 10, borderBottomLeftRadius: 15, borderBottomRightRadius: 15, flexDirection: 'row' }}>
-                <TouchableOpacity onPress={() => navigation.navigate('Menu')} style={{ padding: 5 }}>
+                <TouchableOpacity onPress={() => navigation.navigate('Reception')} style={{ padding: 5 }}>
                     <FontAwesomeIcon icon={faArrowLeft} size={20} color="#fff" />
                 </TouchableOpacity>
-                <Text style={{ color: '#fff', fontSize: 20, fontWeight: '400' }}>Recepção</Text>
+                <Text style={{ color: '#fff', fontSize: 20, fontWeight: '400' }}>Agendamento de consulta</Text>
             </View>
-
-            <View style={styles.content}>
+            {/*<View style={styles.content}>
                 <View style={styles.firstrow}>
-                    <TouchableOpacity onPress={() => navigation.navigate()} style={styles.button}>
+                    <TouchableOpacity onPress={() => navigation.navigate('ServiceEvaluation')} style={styles.button}>
                         <Image style={styles.iconSchedule} source={require('../../assets/icon_schedule.png')} />
                         <Text style={styles.buttonText}>Agendar{'\n'}Consulta</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => navigation.navigate()} style={styles.button}>
+                    <TouchableOpacity onPress={() => navigation.navigate('ServiceEvaluation')} style={styles.button}>
                     <Image style={styles.iconExam} source={require('../../assets/icon_exam.png')} />
                         <Text style={styles.buttonText}>Agendar{'\n'}  Exame</Text>
                     </TouchableOpacity>
                 </View>
 
-            </View>
+            </View> */}
+            
 
         </View>
     );
@@ -62,15 +62,5 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontWeight: 'bold',
         fontSize: 16
-    },
-    iconSchedule: {
-        width: 75,
-        height: 85,
-        resizeMode: 'stretch'
-    },
-    iconExam: {
-        width: 81,
-        height: 97,
-        resizeMode: 'stretch'
     }
 });

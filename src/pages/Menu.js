@@ -182,7 +182,7 @@ export default function Menu({ navigation }) {
 
         <View style={styles.content}>
           <View style={styles.firstrow}>
-            <TouchableOpacity onPress={() => navigation.navigate('SchedulesAndExams')} style={styles.button}>
+            <TouchableOpacity onPress={() => navigation.navigate('Reception')} style={styles.button}>
               <FontAwesomeIcon icon={faQrcode} size={80} color="#fff" />
               <Text style={styles.buttonText}>Recepção</Text>
             </TouchableOpacity>

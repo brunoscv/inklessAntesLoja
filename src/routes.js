@@ -13,8 +13,15 @@ import Attendance from './pages/Attendance';
 import Clinic from './pages/Clinic';
 import Acceptcall from './pages/Acceptcall';
 import Reloadcall from './pages/Reloadcall';
-import SchedulesAndExams from './pages/SchedulesAndExams';
+import Reception from './pages/Reception';
 import ServiceEvaluation from './pages/ServiceEvaluation';
+import ServiceModeConsultation from './pages/ServiceModeConsultation';
+import ServiceTypeConsultation from './pages/ServiceTypeConsultation';
+import HeathPlanConsultation from './pages/HealthPlanConsultation';
+import ChoiceOfDoctorConsultation from './pages/ChoiceOfDoctorConsultation';
+import TimesSuggestionConsultation from './pages/TimesSuggestionConsultation';
+import ServiceModeExam from './pages/ServiceModeExam';
+import ServiceTypeExam from './pages/ServiceTypeExam';
 
 const Routes = createAppContainer(
     createSwitchNavigator({
@@ -31,8 +38,15 @@ const Routes = createAppContainer(
         Clinic,
         Acceptcall,
         Reloadcall,
-        SchedulesAndExams,
-        ServiceEvaluation
+        Reception,
+        ServiceEvaluation,
+        ServiceModeConsultation,
+        ServiceTypeConsultation,
+        HeathPlanConsultation,
+        ChoiceOfDoctorConsultation,
+        TimesSuggestionConsultation,
+        ServiceModeExam,
+        ServiceTypeExam
         
     })
 );
