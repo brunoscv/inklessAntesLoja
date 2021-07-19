@@ -20,7 +20,7 @@ import ServiceTypeConsultation from './pages/ServiceTypeConsultation';
 import HeathPlanConsultation from './pages/HealthPlanConsultation';
 import ChoiceOfDoctorConsultation from './pages/ChoiceOfDoctorConsultation';
 import TimesSuggestionConsultation from './pages/TimesSuggestionConsultation';
-import ServiceModeExam from './pages/ServiceModeExam';
+import HealthPlanExam from './pages/HealthPlanExam';
 import ServiceTypeExam from './pages/ServiceTypeExam';
 
 const Routes = createAppContainer(
@@ -45,8 +45,8 @@ const Routes = createAppContainer(
         HeathPlanConsultation,
         ChoiceOfDoctorConsultation,
         TimesSuggestionConsultation,
-        ServiceModeExam,
-        ServiceTypeExam
+        ServiceTypeExam,
+        HealthPlanExam
         
     })
 );

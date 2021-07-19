@@ -3,7 +3,7 @@ import { View, StyleSheet, TouchableOpacity, Text, Image } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-export default function ServiceModeExam({ navigation }) {
+export default function HealthPlanExam({ navigation }) {
     return (
         <View style={styles.container}>
             <View style={{ backgroundColor: '#1976d2', padding: 10, borderBottomLeftRadius: 15, borderBottomRightRadius: 15, flexDirection: 'row' }}>
