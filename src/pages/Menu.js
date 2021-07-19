@@ -16,9 +16,9 @@ export default function Menu({ navigation }) {
   const [userId, setUserId] = useState('');
   const [user, setUser] = useState('');
   const Hospitais = [
-    {name:'Hospital Gastrovita', logo: require('../../assets/gt.png')},
-    {name:'Hospital Santa Maria', logo: require('../../assets/sm.png')},
-    {name:'Hospital São Pedro', logo: require('../../assets/sp.png')}
+    { name: 'Hospital Gastrovita', logo: require('../../assets/gt.png') },
+    { name: 'Hospital Santa Maria', logo: require('../../assets/sm.png') },
+    { name: 'Hospital São Pedro', logo: require('../../assets/sp.png') }
   ]
   useEffect(() => {
     async function loadCustomer() {
@@ -154,7 +154,7 @@ export default function Menu({ navigation }) {
               </MenuTrigger>
               <MenuOptions style={styles.menuTransparent}>
                 <View style={styles.menuOptionsHead}>
-                  <FontAwesomeIcon icon={faGripLines} size={30} color="#808080"/>
+                  <FontAwesomeIcon icon={faGripLines} size={30} color="#808080" />
                 </View>
                 {Hospitais.map(hospital => (
                   <MenuOption key={hospital.name} style={styles.containerMenuOptions}>
@@ -276,10 +276,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'gray',
     borderRadius: 50,
   },
-  menuTransparent:{
+  menuTransparent: {
     backgroundColor: '#1976d2',
   },
-  menuOptionsHead:{
+  menuOptionsHead: {
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#ffffff',
@@ -297,19 +297,17 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     marginTop: 20
   },
-  containerMenuOptions:{
+  containerMenuOptions: {
     backgroundColor: '#ffffff'
   },
-  cardMenuOption:{
+  cardMenuOption: {
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#ffffff',
-    padding: 3
   },
   nameMenuOptions: {
     fontSize: 20,
     marginLeft: 20
-    //fontVariant: ['small-caps']
   },
   logoHospitalMenuOptions: {
     width: 60,
@@ -319,7 +317,6 @@ const styles = StyleSheet.create({
   },
   nameText: {
     color: '#fff',
-    //fontWeight: 'bold',
     fontSize: 17,
     paddingVertical: 2,
     paddingHorizontal: 20

@@ -15,11 +15,11 @@ export default function SchedulesAndExams({ navigation }) {
 
             <View style={styles.content}>
                 <View style={styles.firstrow}>
-                    <TouchableOpacity onPress={() => navigation.navigate('QueryScheduling')} style={styles.button}>
+                    <TouchableOpacity onPress={() => navigation.navigate()} style={styles.button}>
                         <Image style={styles.iconSchedule} source={require('../../assets/icon_schedule.png')} />
                         <Text style={styles.buttonText}>Agendar{'\n'}Consulta</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => navigation.navigate('ExamsScheduling')} style={styles.button}>
+                    <TouchableOpacity onPress={() => navigation.navigate()} style={styles.button}>
                     <Image style={styles.iconExam} source={require('../../assets/icon_exam.png')} />
                         <Text style={styles.buttonText}>Agendar{'\n'}  Exame</Text>
                     </TouchableOpacity>

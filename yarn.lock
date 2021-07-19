@@ -1200,11 +1200,6 @@
   "resolved" "https://registry.npmjs.org/@react-native-firebase/messaging/-/messaging-7.9.2.tgz"
   "version" "7.9.2"
 
-"@react-native-picker/picker@^1.16.3":
-  "integrity" "sha512-Qt40DBg7IEhBN5x2DYPV3B26j5fNhVZcpCestr1IuirneMNtOaIyA9+nPYniL/OBzd9YbpUKbS7XSy/MM9bP3w=="
-  "resolved" "https://registry.npmjs.org/@react-native-picker/picker/-/picker-1.16.3.tgz"
-  "version" "1.16.3"
-
 "@react-navigation/core@^3.7.9":
   "integrity" "sha512-EknbzM8OI9A5alRxXtQRV5Awle68B+z1QAxNty5DxmlS3BNfmduWNGnim159ROyqxkuDffK9L/U/Tbd45mx+Jg=="
   "resolved" "https://registry.npmjs.org/@react-navigation/core/-/core-3.7.9.tgz"
@@ -5650,10 +5645,10 @@
   "resolved" "https://registry.npmjs.org/opencollective-postinstall/-/opencollective-postinstall-2.0.3.tgz"
   "version" "2.0.3"
 
-"opentok-react-native@^0.14.0":
-  "integrity" "sha512-XvnUQisn1XdZc4pV/6q0KWNDYct8g605he4hXwl52Xz3BfuID5JmzMbVBZhUXSogsI3jC6yThvmlreK1R13Qxg=="
-  "resolved" "https://registry.npmjs.org/opentok-react-native/-/opentok-react-native-0.14.0.tgz"
-  "version" "0.14.0"
+"opentok-react-native@^0.15.0":
+  "integrity" "sha512-bCsgQHhIISItppN7yXOe0W9ZaBuahxRYrIiTaSObKWygLsFCEh4YS/9qqtWNBxuRBHc+29ixcqI8Lqz6PAGkHA=="
+  "resolved" "https://registry.npmjs.org/opentok-react-native/-/opentok-react-native-0.15.0.tgz"
+  "version" "0.15.0"
   dependencies:
     "axios" "^0.19.0"
     "prop-types" "^15.7.2"
@@ -6101,11 +6096,6 @@
     "date-and-time" "0.9.0"
     "tinymask" "1.0.2"
 
-"react-native-opentok@^2.1.0":
-  "integrity" "sha512-zVzejAHFvv0QyPdJaMqDtABcCmdIgjVfc6TAa1nBobomZ8R9KWYKrcGIYxDcsl3dPwjVQR2bLfgt5CbtjDKDyg=="
-  "resolved" "https://registry.npmjs.org/react-native-opentok/-/react-native-opentok-2.1.0.tgz"
-  "version" "2.1.0"
-
 "react-native-popup-menu@^0.15.11":
   "integrity" "sha512-f5q2GoDN99bkA24wHiwasaErcdQEgyqYZ8IYuZPOrZNFr66E4rg6f4LElSVBA3EZJTSq5OddVeaOcU340bSTEg=="
   "resolved" "https://registry.npmjs.org/react-native-popup-menu/-/react-native-popup-menu-0.15.11.tgz"
@@ -6148,7 +6138,7 @@
     "prop-types" "^15.6.0"
     "react-timer-mixin" "^0.13.4"
 
-"react-native@*", "react-native@^0.63.3", "react-native@>=0.50.0", "react-native@>=0.57", "react-native@>=0.62.0-rc.0 <0.64.0":
+"react-native@*", "react-native@^0.63.3", "react-native@>=0.50.0", "react-native@>=0.62.0-rc.0 <0.64.0":
   "integrity" "sha512-I4kM8kYO2mWEYUFITMcpRulcy4/jd+j9T6PbIzR0FuMcz/xwd+JwHoLPa1HmCesvR1RDOw9o4D+OFLwuXXfmGw=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.63.4.tgz"
   "version" "0.63.4"
@@ -6209,7 +6199,7 @@
   "resolved" "https://registry.npmjs.org/react-timer-mixin/-/react-timer-mixin-0.13.4.tgz"
   "version" "0.13.4"
 
-"react@*", "react@>=16.5.1", "react@16 || 17", "react@16.13.1":
+"react@*", "react@>=16.5.1", "react@16.13.1":
   "integrity" "sha512-YMZQQq32xHLX0bz5Mnibv1/LHb3Sqzngu7xstSM+vrkE5Kzr9xE0yMByK5kMoTK30YVJE61WfbxIFFvfeDKT1w=="
   "resolved" "https://registry.npmjs.org/react/-/react-16.13.1.tgz"
   "version" "16.13.1"

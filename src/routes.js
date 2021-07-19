@@ -14,8 +14,6 @@ import Clinic from './pages/Clinic';
 import Acceptcall from './pages/Acceptcall';
 import Reloadcall from './pages/Reloadcall';
 import SchedulesAndExams from './pages/SchedulesAndExams';
-import QueryScheduling from './pages/QuerySchedulings';
-import ExamsScheduling from './pages/ExamsScheduling';
 import ServiceEvaluation from './pages/ServiceEvaluation';
 
 const Routes = createAppContainer(
@@ -34,8 +32,6 @@ const Routes = createAppContainer(
         Acceptcall,
         Reloadcall,
         SchedulesAndExams,
-        QueryScheduling,
-        ExamsScheduling,
         ServiceEvaluation
         
     })
