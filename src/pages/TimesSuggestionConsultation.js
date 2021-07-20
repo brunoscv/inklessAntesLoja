@@ -19,10 +19,10 @@ export default function TimesSuggestionConsultation({ navigation }) {
                     <Text style={styles.nameHospitalProfile}>em Hospital Gastrovita</Text>
                 </View>
             </View>
-            <View style={{marginHorizontal: 30}}>
+            <View style={{ marginHorizontal: 30 }}>
                 <Text style={{ fontSize: 20, color: '#fff' }}>Sugestão de horários:</Text>
             </View>
-            
+
 
         </View>
     );

@@ -30,30 +30,30 @@ export default function ServiceTypeExam({ navigation }) {
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={() => navigation.navigate('HealthPlanExam')} style={styles.button}>
-                    <Image style={styles.icon} source={require('../../assets/pf1.png')} />
+                        <Image style={styles.icon} source={require('../../assets/pf1.png')} />
                         <Text style={styles.buttonText}>Dificuldade de{'\n'}   locomoção</Text>
                     </TouchableOpacity>
                 </View>
 
                 <View style={styles.secondrow}>
                     <TouchableOpacity onPress={() => navigation.navigate('HealthPlanExam')} style={styles.button}>
-                    <Image style={styles.icon} source={require('../../assets/pf2.png')} />
-                        <Text style={styles.buttonText}>Idoso(&gt; 60 anos)</Text>
+                        <Image style={styles.icon} source={require('../../assets/pf2.png')} />
+                        <Text style={styles.buttonText}>Idosos (&gt; 60 anos)</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={() => navigation.navigate('HealthPlanExam')} style={styles.button}>
-                    <Image style={styles.icon} source={require('../../assets/pf3.png')} />
+                        <Image style={styles.icon} source={require('../../assets/pf3.png')} />
                         <Text style={styles.buttonText}>Gestantes</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.thirdrow}>
                     <TouchableOpacity onPress={() => navigation.navigate('HealthPlanExam')} style={styles.button}>
-                    <Image style={styles.icon} source={require('../../assets/pf4.png')} />
+                        <Image style={styles.icon} source={require('../../assets/pf4.png')} />
                         <Text style={styles.buttonText}>Criança de colo</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={() => navigation.navigate('HealthPlanExam')} style={styles.button}>
-                    <Image style={styles.icon} source={require('../../assets/pf5.png')} />
+                        <Image style={styles.icon} source={require('../../assets/pf5.png')} />
                         <Text style={styles.buttonText}>Autistas</Text>
                     </TouchableOpacity>
                 </View>

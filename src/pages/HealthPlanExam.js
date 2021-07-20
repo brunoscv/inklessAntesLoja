@@ -19,7 +19,7 @@ export default function HealthPlanExam({ navigation }) {
                     <Text style={styles.nameHospitalProfile}>em Hospital Gastrovita</Text>
                 </View>
             </View>
-            <View style={{marginHorizontal: 30}}>
+            <View style={{ marginHorizontal: 30 }}>
                 <Text style={{ fontSize: 20, color: '#fff' }}>Selecione o convênio:</Text>
             </View>
 

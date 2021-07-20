@@ -19,7 +19,7 @@ export default function ServiceModeConsultation({ navigation }) {
                     <Text style={styles.nameHospitalProfile}>em Hospital Gastrovita</Text>
                 </View>
             </View>
-            <View style={{marginHorizontal: 30}}>
+            <View style={{ marginHorizontal: 30 }}>
                 <Text style={{ fontSize: 20, color: '#fff' }}>Modalidade do atendimento:</Text>
             </View>
             <View style={styles.content}>
