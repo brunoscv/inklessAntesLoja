@@ -17,11 +17,11 @@ import Reception from './pages/Reception';
 import ServiceEvaluation from './pages/ServiceEvaluation';
 import ServiceModeConsultation from './pages/ServiceModeConsultation';
 import ServiceTypeConsultation from './pages/ServiceTypeConsultation';
-import HeathPlanConsultation from './pages/HealthPlanConsultation';
+import HealthPlanConsultation from './pages/HealthPlanConsultation';
 import ChoiceOfDoctorConsultation from './pages/ChoiceOfDoctorConsultation';
 import TimesSuggestionConsultation from './pages/TimesSuggestionConsultation';
-import HealthPlanExam from './pages/HealthPlanExam';
 import ServiceTypeExam from './pages/ServiceTypeExam';
+import HealthPlanExam from './pages/HealthPlanExam';
 
 const Routes = createAppContainer(
     createSwitchNavigator({
@@ -42,7 +42,7 @@ const Routes = createAppContainer(
         ServiceEvaluation,
         ServiceModeConsultation,
         ServiceTypeConsultation,
-        HeathPlanConsultation,
+        HealthPlanConsultation,
         ChoiceOfDoctorConsultation,
         TimesSuggestionConsultation,
         ServiceTypeExam,

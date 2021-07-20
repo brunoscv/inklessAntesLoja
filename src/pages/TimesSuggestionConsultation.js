@@ -12,19 +12,16 @@ export default function TimesSuggestionConsultation({ navigation }) {
                 </TouchableOpacity>
                 <Text style={{ color: '#fff', fontSize: 20, fontWeight: '400' }}>Agendamento de consulta</Text>
             </View>
-            {/*<View style={styles.content}>
-                <View style={styles.firstrow}>
-                    <TouchableOpacity onPress={() => navigation.navigate('ServiceEvaluation')} style={styles.button}>
-                        <Image style={styles.iconSchedule} source={require('../../assets/icon_schedule.png')} />
-                        <Text style={styles.buttonText}>Agendar{'\n'}Consulta</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => navigation.navigate('ServiceEvaluation')} style={styles.button}>
-                    <Image style={styles.iconExam} source={require('../../assets/icon_exam.png')} />
-                        <Text style={styles.buttonText}>Agendar{'\n'}  Exame</Text>
-                    </TouchableOpacity>
+            <View style={styles.headerProfile} >
+                <Image style={styles.cardAvatar} source={require('../../assets/user.png')} />
+                <View>
+                    <Text style={styles.nameText}>User</Text>
+                    <Text style={styles.nameHospitalProfile}>em Hospital Gastrovita</Text>
                 </View>
-
-            </View> */}
+            </View>
+            <View style={{marginHorizontal: 30}}>
+                <Text style={{ fontSize: 20, color: '#fff' }}>Sugestão de horários:</Text>
+            </View>
             
 
         </View>
@@ -35,6 +32,11 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#1976d2',
+    },
+    headerProfile: {
+        padding: 20,
+        flexDirection: 'row',
+        alignItems: 'center'
     },
     content: {
         flex: 1,
@@ -47,20 +49,28 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#1976d2',
-
     },
-    button: {
-        height: 160,
-        width: 160,
-        backgroundColor: '#29b6f6',
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderRadius: 16,
-        margin: 5
-    },
-    buttonText: {
+    cardText: {
         color: '#fff',
         fontWeight: 'bold',
         fontSize: 16
+    },
+    cardAvatar: {
+        height: 50,
+        width: 50,
+        backgroundColor: 'gray',
+        borderRadius: 50,
+    },
+    nameText: {
+        color: '#fff',
+        fontSize: 17,
+        paddingVertical: 2,
+        paddingHorizontal: 20
+    },
+    nameHospitalProfile: {
+        color: '#fff',
+        fontSize: 17,
+        paddingHorizontal: 20,
+        fontWeight: 'bold'
     }
 });

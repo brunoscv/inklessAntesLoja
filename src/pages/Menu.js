@@ -169,7 +169,7 @@ export default function Menu({ navigation }) {
               </MenuOptions>
             </MenuHospitais>
           </View>
-          <View style={{ padding: 20, flexDirection: 'row', alignItems: 'center' }}>
+          <View style={styles.headerProfile}>
             {!user.image ?
               <Image style={styles.cardAvatar} source={require('../../assets/user.png')} />
               :
@@ -232,6 +232,11 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#1976d2',
   },
+  headerProfile: {
+    padding: 20,
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
   content: {
     flex: 1,
     justifyContent: 'center',
@@ -251,10 +256,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#1976d2',
 
   },
-  thridrow: {
+  thirdrow: {
     flexDirection: 'row',
-    backgroundColor: '#1976d2',
-
+    backgroundColor: '#1976d2'
   },
   button: {
     height: 160,

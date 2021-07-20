@@ -12,6 +12,13 @@ export default function Reception({ navigation }) {
                 </TouchableOpacity>
                 <Text style={{ color: '#fff', fontSize: 20, fontWeight: '400' }}>Recepção</Text>
             </View>
+            <View style={styles.headerProfile} >
+                <Image style={styles.cardAvatar} source={require('../../assets/user.png')} />
+                <View>
+                    <Text style={styles.nameText}>User</Text>
+                    <Text style={styles.nameHospitalProfile}>em Hospital Gastrovita</Text>
+                </View>
+            </View>
 
             <View style={styles.content}>
                 <View style={styles.firstrow}>
@@ -19,8 +26,8 @@ export default function Reception({ navigation }) {
                         <Image style={styles.iconSchedule} source={require('../../assets/icon_schedule.png')} />
                         <Text style={styles.buttonText}>Agendar{'\n'}Consulta</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => navigation.navigate('ServiceEvaluation')} style={styles.button}>
-                    <Image style={styles.iconExam} source={require('../../assets/icon_exam.png')} />
+                    <TouchableOpacity onPress={() => navigation.navigate('ServiceTypeExam')} style={styles.button}>
+                        <Image style={styles.iconExam} source={require('../../assets/icon_exam.png')} />
                         <Text style={styles.buttonText}>Agendar{'\n'}  Exame</Text>
                     </TouchableOpacity>
                 </View>
@@ -36,13 +43,18 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#1976d2',
     },
+    headerProfile:{
+        padding: 20,
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
     content: {
         flex: 1,
         justifyContent: 'flex-start',
         alignItems: 'center'
     },
     firstrow: {
-        marginTop: 50,
+        marginTop: 17,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
@@ -72,5 +84,23 @@ const styles = StyleSheet.create({
         width: 81,
         height: 97,
         resizeMode: 'stretch'
+    },
+    cardAvatar: {
+        height: 50,
+        width: 50,
+        backgroundColor: 'gray',
+        borderRadius: 50,
+    },
+    nameText: {
+        color: '#fff',
+        fontSize: 17,
+        paddingVertical: 2,
+        paddingHorizontal: 20
+    },
+    nameHospitalProfile: {
+        color: '#fff',
+        fontSize: 17,
+        paddingHorizontal: 20,
+        fontWeight: 'bold'
     }
 });

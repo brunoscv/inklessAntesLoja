@@ -3,28 +3,25 @@ import { View, StyleSheet, TouchableOpacity, Text, Image } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-export default function HeathPlanConsultation({ navigation }) {
+export default function HealthPlanConsultation({ navigation }) {
     return (
         <View style={styles.container}>
             <View style={{ backgroundColor: '#1976d2', padding: 10, borderBottomLeftRadius: 15, borderBottomRightRadius: 15, flexDirection: 'row' }}>
-                <TouchableOpacity onPress={() => navigation.navigate('Reception')} style={{ padding: 5 }}>
+                <TouchableOpacity onPress={() => navigation.navigate('ServiceTypeConsultation')} style={{ padding: 5 }}>
                     <FontAwesomeIcon icon={faArrowLeft} size={20} color="#fff" />
                 </TouchableOpacity>
                 <Text style={{ color: '#fff', fontSize: 20, fontWeight: '400' }}>Agendamento de consulta</Text>
             </View>
-            {/*<View style={styles.content}>
-                <View style={styles.firstrow}>
-                    <TouchableOpacity onPress={() => navigation.navigate('ServiceEvaluation')} style={styles.button}>
-                        <Image style={styles.iconSchedule} source={require('../../assets/icon_schedule.png')} />
-                        <Text style={styles.buttonText}>Agendar{'\n'}Consulta</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => navigation.navigate('ServiceEvaluation')} style={styles.button}>
-                    <Image style={styles.iconExam} source={require('../../assets/icon_exam.png')} />
-                        <Text style={styles.buttonText}>Agendar{'\n'}  Exame</Text>
-                    </TouchableOpacity>
+            <View style={styles.headerProfile} >
+                <Image style={styles.cardAvatar} source={require('../../assets/user.png')} />
+                <View>
+                    <Text style={styles.nameText}>User</Text>
+                    <Text style={styles.nameHospitalProfile}>em Hospital Gastrovita</Text>
                 </View>
-
-            </View> */}
+            </View>
+            <View style={{marginHorizontal: 30}}>
+                <Text style={{ fontSize: 20, color: '#fff' }}>Selecione o convênio:</Text>
+            </View>
             
 
         </View>
@@ -35,6 +32,11 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#1976d2',
+    },
+    headerProfile: {
+        padding: 20,
+        flexDirection: 'row',
+        alignItems: 'center'
     },
     content: {
         flex: 1,
@@ -49,18 +51,27 @@ const styles = StyleSheet.create({
         backgroundColor: '#1976d2',
 
     },
-    button: {
-        height: 160,
-        width: 160,
-        backgroundColor: '#29b6f6',
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderRadius: 16,
-        margin: 5
-    },
-    buttonText: {
+    cardText: {
         color: '#fff',
         fontWeight: 'bold',
         fontSize: 16
+    },
+    cardAvatar: {
+        height: 50,
+        width: 50,
+        backgroundColor: 'gray',
+        borderRadius: 50,
+    },
+    nameText: {
+        color: '#fff',
+        fontSize: 17,
+        paddingVertical: 2,
+        paddingHorizontal: 20
+    },
+    nameHospitalProfile: {
+        color: '#fff',
+        fontSize: 17,
+        paddingHorizontal: 20,
+        fontWeight: 'bold'
     }
 });
