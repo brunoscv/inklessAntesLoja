@@ -11,15 +11,17 @@ import baseURL from './Baseurl';
 import axios from 'axios';
 import userLogo from '../../assets/user.png';
 
+const Hospitais = [
+  { name: 'Hospital Gastrovita', logo: require('../../assets/gt.png') },
+  { name: 'Hospital Santa Maria', logo: require('../../assets/sm.png') },
+  { name: 'Hospital São Pedro', logo: require('../../assets/sp.png') }
+]
+
 export default function Menu({ navigation }) {
   const [scheduling, setScheduling] = useState(0);
   const [userId, setUserId] = useState('');
   const [user, setUser] = useState('');
-  const Hospitais = [
-    { name: 'Hospital Gastrovita', logo: require('../../assets/gt.png') },
-    { name: 'Hospital Santa Maria', logo: require('../../assets/sm.png') },
-    { name: 'Hospital São Pedro', logo: require('../../assets/sp.png') }
-  ]
+  
   useEffect(() => {
     async function loadCustomer() {
       const user_id = await AsyncStorage.getItem('@storage_Key');

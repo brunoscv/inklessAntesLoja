@@ -4,10 +4,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 export default function ChoiceOfDoctorConsultation({ navigation }) {
+
+    const card = ({ item }) => (
+        <TouchableOpacity onPress={() => navigation.navigate('TimesSuggestionConsultation')} style={styles.card}>
+            <Text style={styles.cardText}>{item.name}</Text>
+        </TouchableOpacity>
+    );
+
     return (
         <View style={styles.container}>
             <View style={{ backgroundColor: '#1976d2', padding: 10, borderBottomLeftRadius: 15, borderBottomRightRadius: 15, flexDirection: 'row' }}>
-                <TouchableOpacity onPress={() => navigation.navigate('Reception')} style={{ padding: 5 }}>
+                <TouchableOpacity onPress={() => navigation.navigate('HealthPlanConsultation')} style={{ padding: 5 }}>
                     <FontAwesomeIcon icon={faArrowLeft} size={20} color="#fff" />
                 </TouchableOpacity>
                 <Text style={{ color: '#fff', fontSize: 20, fontWeight: '400' }}>Agendamento de consulta</Text>
