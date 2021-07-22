@@ -301,7 +301,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginLeft: 20,
-    marginTop: 20
+    marginTop: 27
   },
   containerMenuOptions: {
     backgroundColor: '#ffffff'
