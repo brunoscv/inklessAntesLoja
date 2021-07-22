@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, Text, Image, FlatList } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text, Image, FlatList, Alert } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
@@ -33,10 +33,26 @@ export default function HealthPlanExam({ navigation }) {
         { name: 'UNIMED TOMOGRAFIA', img: require('../../assets/c25.jpeg') }
     ]
 
+    function cardTouch() {
+        Alert.alert(
+            "Hospital Gastrovita",
+            "Seu agendamento foi realizado.\nAguarde ser chamado!",
+            [
+                {
+                    text: "Entendido",
+                    onPress: () => navigation.navigate('Menu')
+                }
+            ]
+        );
+        
+    }
+
     const card = ({ item }) => (
-        <TouchableOpacity onPress={() => alert(`Seu agendamento foi realizado.\nAguarde ser chamado!`)} style={styles.card}>
+        <TouchableOpacity onPress={() => cardTouch()} style={styles.card}>
             <Image style={styles.imgHealthPlan} source={item.img} />
-            <Text style={styles.cardText}>{item.name}</Text>
+            <View style={{ flex: 1, marginHorizontal: 2 }}>
+                <Text style={styles.cardText}>{item.name}</Text>
+            </View>
         </TouchableOpacity>
     );
 

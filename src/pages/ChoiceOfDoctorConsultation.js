@@ -1,13 +1,27 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, Text, Image } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text, Image, FlatList } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 export default function ChoiceOfDoctorConsultation({ navigation }) {
 
+    const data = [
+        { name: 'ANA PAULA SANTOS DE ANDRADE MELO', specialty: 'COLOPROCTOLOGISTA', crm: 'CRM-PI 3506', img: require('../../assets/med1.jpeg') },
+        { name: 'ANDERSON MARTINS DANTAS', specialty: 'CIRURGIÃO GERAL', crm: 'CRM-PI 2739', img: require('../../assets/med2.jpeg') },
+        { name: 'CARLOS DIMAS DE CARVALHO SOUSA', specialty: 'GASTROENTEROLOGISTA', crm: 'CRM-PI 747', img: require('../../assets/med3.jpeg') },
+        { name: 'CAROLINE TORRES SAMPAIO', specialty: 'GASTROENTEROLOGISTA', crm: 'CRM-PI 4909', img: require('../../assets/med4.png') },
+        { name: 'DANILO DA FONSECA REIS SILVA', specialty: 'ONCOLOGISTA', crm: 'CRM-PI 3799', img: require('../../assets/med5.jpeg') },
+        { name: 'ELIO RODRIGUES DA SILVA', specialty: 'CIRURGIÃO GERAL', crm: 'CRM-PI 1977', img: require('../../assets/med6.jpeg') }
+    ]
+
     const card = ({ item }) => (
         <TouchableOpacity onPress={() => navigation.navigate('TimesSuggestionConsultation')} style={styles.card}>
-            <Text style={styles.cardText}>{item.name}</Text>
+            <Image style={styles.imgDoctor} source={item.img} />
+            <View style={{ flex: 1, marginHorizontal: 2 }}>
+                <Text style={styles.cardText}>{item.name}</Text>
+                <Text style={styles.cardText}>{item.specialty}</Text>
+                <Text style={styles.cardText}>{item.crm}</Text>
+            </View>
         </TouchableOpacity>
     );
 
@@ -29,6 +43,13 @@ export default function ChoiceOfDoctorConsultation({ navigation }) {
             <View style={{ marginHorizontal: 30 }}>
                 <Text style={{ fontSize: 20, color: '#fff' }}>Selecione o médico:</Text>
             </View>
+            <View style={styles.content}>
+                <FlatList
+                    data={data}
+                    renderItem={card}
+                    keyExtractor={item => item.name}
+                />
+            </View>
 
 
         </View>
@@ -48,7 +69,8 @@ const styles = StyleSheet.create({
     content: {
         flex: 1,
         justifyContent: 'flex-start',
-        alignItems: 'center'
+        marginHorizontal: 10,
+        marginTop: 10
     },
     firstrow: {
         marginTop: 50,
@@ -57,11 +79,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#1976d2',
 
-    },
-    cardText: {
-        color: '#fff',
-        fontWeight: 'bold',
-        fontSize: 16
     },
     cardAvatar: {
         height: 50,
@@ -80,5 +97,27 @@ const styles = StyleSheet.create({
         fontSize: 17,
         paddingHorizontal: 20,
         fontWeight: 'bold'
+    },
+    card: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#26b6f6',
+        marginVertical: 5,
+        marginHorizontal: 20,
+        borderRadius: 16,
+        height: 105
+    },
+    imgDoctor: {
+        backgroundColor: '#ffffff',
+        height: 70,
+        width: 70,
+        borderRadius: 50,
+        //resizeMode: 'cover',
+        marginHorizontal: 10
+    },
+    cardText: {
+        color: '#fff',
+        fontWeight: 'bold',
+        fontSize: 16
     }
 });

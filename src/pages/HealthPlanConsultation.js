@@ -38,7 +38,9 @@ export default function HealthPlanConsultation({ navigation }) {
     const card = ({ item }) => (
         <TouchableOpacity onPress={() => navigation.navigate('ChoiceOfDoctorConsultation')} style={styles.card}>
             <Image style={styles.imgHealthPlan} source={item.img} />
-            <Text style={styles.cardText}>{item.name}</Text>
+            <View style={{ flex: 1, marginHorizontal: 2 }}>
+                <Text style={styles.cardText}>{item.name}</Text>
+            </View>
         </TouchableOpacity>
     );
 

@@ -318,6 +318,7 @@ const styles = StyleSheet.create({
   logoHospitalMenuOptions: {
     width: 60,
     height: 60,
+    borderRadius: 50,
     marginLeft: 5,
     resizeMode: 'contain'
   },
