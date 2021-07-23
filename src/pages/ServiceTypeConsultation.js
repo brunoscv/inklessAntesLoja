@@ -7,7 +7,7 @@ export default function ServiceTypeConsultation({ navigation }) {
     return (
         <View style={styles.container}>
             <View style={{ backgroundColor: '#1976d2', padding: 10, borderBottomLeftRadius: 15, borderBottomRightRadius: 15, flexDirection: 'row' }}>
-                <TouchableOpacity onPress={() => navigation.navigate('ServiceModeConsultation')} style={{ padding: 5 }}>
+                <TouchableOpacity onPress={() => navigation.navigate('Reception')} style={{ padding: 5 }}>
                     <FontAwesomeIcon icon={faArrowLeft} size={20} color="#fff" />
                 </TouchableOpacity>
                 <Text style={{ color: '#fff', fontSize: 20, fontWeight: '400' }}>Agendamento de consulta</Text>

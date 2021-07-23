@@ -22,7 +22,7 @@ export default function Reception({ navigation }) {
 
             <View style={styles.content}>
                 <View style={styles.firstrow}>
-                    <TouchableOpacity onPress={() => navigation.navigate('ServiceModeConsultation')} style={styles.button}>
+                    <TouchableOpacity onPress={() => navigation.navigate('ServiceTypeConsultation')} style={styles.button}>
                         <Image style={styles.iconSchedule} source={require('../../assets/icon_schedule.png')} />
                         <Text style={styles.buttonText}>Agendar{'\n'}Consulta</Text>
                     </TouchableOpacity>

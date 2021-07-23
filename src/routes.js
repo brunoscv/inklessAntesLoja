@@ -15,7 +15,6 @@ import Acceptcall from './pages/Acceptcall';
 import Reloadcall from './pages/Reloadcall';
 import Reception from './pages/Reception';
 import ServiceEvaluation from './pages/ServiceEvaluation';
-import ServiceModeConsultation from './pages/ServiceModeConsultation';
 import ServiceTypeConsultation from './pages/ServiceTypeConsultation';
 import HealthPlanConsultation from './pages/HealthPlanConsultation';
 import ChoiceOfDoctorConsultation from './pages/ChoiceOfDoctorConsultation';
@@ -40,7 +39,6 @@ const Routes = createAppContainer(
         Reloadcall,
         Reception,
         ServiceEvaluation,
-        ServiceModeConsultation,
         ServiceTypeConsultation,
         HealthPlanConsultation,
         ChoiceOfDoctorConsultation,
