@@ -19,13 +19,8 @@ export default function ServiceEvaluation({ navigation }) {
 
             <View style={styles.rowEmojis}>
                 <TouchableOpacity style={styles.buttonEmoji}>
-                    <FontAwesomeIcon icon={faAngry} size={55} color="#ffffff" />
-                    <Text style={styles.textEmojis}>Detestei</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.buttonEmoji}>
-                    <FontAwesomeIcon icon={faMeh} size={55} color="#ffffff" />
-                    <Text style={styles.textEmojis}>Razoável</Text>
+                    <FontAwesomeIcon icon={faGrinHearts} size={55} color="#ffffff" />
+                    <Text style={styles.textEmojis}>Amei</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.buttonEmoji}>
@@ -33,9 +28,14 @@ export default function ServiceEvaluation({ navigation }) {
                     <Text style={styles.textEmojis}>Gostei</Text>
                 </TouchableOpacity>
 
+                <TouchableOpacity style={styles.buttonEmoji}>
+                    <FontAwesomeIcon icon={faMeh} size={55} color="#ffffff" />
+                    <Text style={styles.textEmojis}>Razoável</Text>
+                </TouchableOpacity>
+
                 <TouchableOpacity style={styles.buttonEmoji} onPress={() => navigation.navigate('Menu')}>
-                    <FontAwesomeIcon icon={faGrinHearts} size={55} color="#ffffff" />
-                    <Text style={styles.textEmojis}>Amei</Text>
+                    <FontAwesomeIcon icon={faAngry} size={55} color="#ffffff" />
+                    <Text style={styles.textEmojis}>Detestei</Text>
                 </TouchableOpacity>
             </View>
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Text, Image, FlatList, Alert } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faArrowLeft, faCalendarCheck, faConciergeBell } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faCalendarCheck, faConciergeBell, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 export default function TimesSuggestionConsultation({ navigation }) {
 
@@ -25,7 +25,7 @@ export default function TimesSuggestionConsultation({ navigation }) {
                 }
             ]
         );
-        
+
     }
 
     const card = ({ item }) => (
@@ -62,10 +62,16 @@ export default function TimesSuggestionConsultation({ navigation }) {
                     renderItem={card}
                     keyExtractor={item => item.hour}
                 />
-                <TouchableOpacity onPress={() => cardTouch()} style={styles.btnDecideReception}>
-                    <FontAwesomeIcon style={styles.iconCociergebell} icon={faConciergeBell} size={50} color="#fff" />
-                    <Text style={styles.cardText}>Decidir na Recepção</Text>
-                </TouchableOpacity>
+                <View style={styles.footer}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Reception')} style={styles.btnCancel}>
+                        <FontAwesomeIcon icon={faTimes} size={30} color="#fff" />
+                        <Text style={{ color: '#fff', fontWeight: 'bold', fontSize: 18}} >Cancelar</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => cardTouch()}style={styles.btnDecideReception} >
+                        <FontAwesomeIcon icon={faConciergeBell} size={30} color="#fff" />
+                        <Text style={{ color: '#fff', fontWeight: 'bold', fontSize: 18}}> Decidir na recepção</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
 
         </View>
@@ -132,15 +138,30 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 18
     },
-    btnDecideReception: {
+    footer: {
         flexDirection: 'row',
         alignItems: 'center',
-        height: 70,
-        margin: 20,
-        backgroundColor: '#26b6f6',
-        borderRadius: 16
+        height: 80
     },
-    iconCociergebell: {
-        marginHorizontal: 23
+    btnCancel: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginLeft: 20,
+        backgroundColor: '#26b6f6',
+        borderRadius: 16,
+        height: 50,
+        width: 120,
+    },
+    btnDecideReception: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#26b6f6',
+        height: 50,
+        width: 205,
+        borderRadius: 16,
+        marginLeft: 10,
+        marginRight: 20
     }
 });

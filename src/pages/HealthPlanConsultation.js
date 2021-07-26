@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Text, Image, FlatList } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -68,6 +68,12 @@ export default function HealthPlanConsultation({ navigation }) {
                     renderItem={card}
                     keyExtractor={item => item.name}
                 />
+                <View style={styles.footer}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Reception')} style={styles.btnCancel}>
+                        <FontAwesomeIcon icon={faTimes} size={30} color="#fff" />
+                        <Text style={{ color: '#fff', fontWeight: 'bold', fontSize: 18}} >Cancelar</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
 
 
@@ -130,5 +136,20 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontWeight: 'bold',
         fontSize: 16
+    },
+    footer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        height: 80
+    },
+    btnCancel: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginLeft: 20,
+        backgroundColor: '#26b6f6',
+        borderRadius: 16,
+        height: 50,
+        width: 120,
     }
 });
