@@ -77,7 +77,8 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     textEmojis: {
-        color: '#ffffff'
+        color: '#ffffff',
+        fontSize: 18
     },
     textObs: {
         color: '#ffffff',
