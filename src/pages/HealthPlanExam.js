@@ -36,7 +36,7 @@ export default function HealthPlanExam({ navigation }) {
     function cardTouch() {
         Alert.alert(
             "Hospital Gastrovita",
-            "Seu agendamento foi realizado.\nAguarde ser chamado!",
+            "Seu agendamento foi realizado.\nAguarde ser chamado no aplicativo!",
             [
                 {
                     text: "Entendido",

@@ -31,9 +31,7 @@ export default function Reception({ navigation }) {
                         <Text style={styles.buttonText}>Agendar{'\n'}  Exame</Text>
                     </TouchableOpacity>
                 </View>
-
             </View>
-
         </View>
     );
 }
