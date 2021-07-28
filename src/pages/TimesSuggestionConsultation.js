@@ -64,11 +64,11 @@ export default function TimesSuggestionConsultation({ navigation }) {
                 />
                 <View style={styles.footer}>
                     <TouchableOpacity onPress={() => navigation.navigate('Reception')} style={styles.btnCancel}>
-                        <FontAwesomeIcon icon={faTimes} size={30} color="#fff" />
+                        <FontAwesomeIcon icon={faTimes} size={20} color="#fff" />
                         <Text style={{ color: '#fff', fontWeight: 'bold', fontSize: 18}} >Cancelar</Text>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => cardTouch()}style={styles.btnDecideReception} >
-                        <FontAwesomeIcon icon={faConciergeBell} size={30} color="#fff" />
+                        <FontAwesomeIcon icon={faConciergeBell} size={20} color="#fff" />
                         <Text style={{ color: '#fff', fontWeight: 'bold', fontSize: 18}}> Decidir na recepção</Text>
                     </TouchableOpacity>
                 </View>
@@ -141,7 +141,8 @@ const styles = StyleSheet.create({
     footer: {
         flexDirection: 'row',
         alignItems: 'center',
-        height: 80
+        justifyContent: 'space-between',
+        height: 65
     },
     btnCancel: {
         flexDirection: 'row',
@@ -149,8 +150,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginLeft: 20,
         backgroundColor: '#26b6f6',
-        borderRadius: 16,
-        height: 50,
+        borderRadius: 25,
+        height: 40,
         width: 120,
     },
     btnDecideReception: {
@@ -158,10 +159,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#26b6f6',
-        height: 50,
+        height: 40,
         width: 205,
-        borderRadius: 16,
-        marginLeft: 10,
+        borderRadius: 25,
         marginRight: 20
     }
 });
