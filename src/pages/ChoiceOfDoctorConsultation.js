@@ -69,7 +69,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#1976d2',
     },
     headerProfile: {
-        padding: 20,
+        marginHorizontal: 20,
+        marginBottom: 10,
         flexDirection: 'row',
         alignItems: 'center'
     },

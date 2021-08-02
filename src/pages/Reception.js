@@ -41,8 +41,9 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#1976d2',
     },
-    headerProfile:{
-        padding: 20,
+    headerProfile: {
+        //padding: 20,
+        marginHorizontal: 20,
         flexDirection: 'row',
         alignItems: 'center'
     },

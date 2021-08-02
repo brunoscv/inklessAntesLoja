@@ -235,7 +235,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#1976d2',
   },
   headerProfile: {
-    padding: 20,
+    //padding: 20,
+    marginHorizontal: 20,
+    marginVertical: 10,
     flexDirection: 'row',
     alignItems: 'center'
   },
@@ -301,7 +303,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginLeft: 20,
-    marginTop: 27
+    marginTop: 5
   },
   containerMenuOptions: {
     backgroundColor: '#ffffff'
